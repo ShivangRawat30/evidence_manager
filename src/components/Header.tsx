@@ -4,14 +4,13 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 // import ConnectBtn from './ConnectBtn'
 
 const Header: React.FC = () => {
-  return (
-    <header className="shadow-sm shadow-blue-900 py-4 text-blue-700">
+  return ( 
+    <header className="shadow-sm shadow-blue-900 py-4 text-blue-700 text-center bg-black">
       <main className="lg:w-2/3 w-full mx-auto flex justify-between items-center flex-wrap">
-        <Link href={'/'} className="text-2xl mb-2">
+        <Link href={'/'} className="text-4xl mb-2">
           <span className="text-blue-200">Evidence</span>
         </Link>
-        Checking branch
-        <div className="flex justify-end items-center space-x-2 md:space-x-4 mt-2 md:mt-0">
+        <div className="flex justify-end items-center space-x-2 md:space-x-4 mt-2 md:mt-0 ">
           <ConnectButton />
         </div>
       </main>
