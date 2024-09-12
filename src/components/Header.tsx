@@ -10,7 +10,7 @@ const Header: React.FC = () => {
         <Link href={'/'} className="text-2xl mb-2">
           <span className="text-blue-200">Evidence</span>
         </Link>
-
+        Checking branch
         <div className="flex justify-end items-center space-x-2 md:space-x-4 mt-2 md:mt-0">
           <ConnectButton />
         </div>
