@@ -1,9 +1,8 @@
 "use client";
 import Link from "next/link";
 import { LegacyRef, RefObject, useEffect, useRef, useState } from "react";
-import styles from "./Menu.module.css";
 import { useGSAP } from "@gsap/react";
-import { gsap, to } from "gsap";
+import { gsap } from "gsap";
 const menuLinks = [
 	{ path: "/", label: "Home" },
 	{ path: "/about", label: "About" },
@@ -50,7 +49,7 @@ export default function Menu() {
 	}, [isMenuOpen]);
 	return (
 		<div
-			className="menu-container"
+			className="menu-container z-50"
 			ref={container}>
 			<div className="menu-bar fixed top-0 left-0 w-screen p-[2em] flex justify-between items-center z-1">
 				<div className="menu-logo">

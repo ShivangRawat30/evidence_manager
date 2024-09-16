@@ -10,6 +10,7 @@ import { config } from "../wagmi";
 import { ChakraProvider } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Background from "../components/Background";
+import Menu from "../components/Menu";
 
 const client = new QueryClient();
 
