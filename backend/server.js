@@ -1,10 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const connectDB = require('./backend/config/database'); // Correct path to database.js
-const evidenceRoutes = require('./backend/routes/Evidence'); // Correct path to evidence.js
+const connectDB = require('./config/database'); 
+const evidenceRoutes = require('./routes/Evidence');
 
 const app = express();
-const PORT = process.env.PORT || 5000; // Port can be set using environment variables
+const PORT = process.env.PORT || 2000; // Port can be set using environment variables
 
 // Connect to MongoDB
 connectDB();

@@ -19,6 +19,7 @@ router.post('/create', async (req, res) => {
     res.json({ message: 'Evidence created successfully', evidence: newEvidence });
   } catch (error) {
     res.status(500).json({ error: 'Error creating evidence' });
+    console.log(error);
   }
 });
 
@@ -35,13 +36,12 @@ router.get('/all', async (req, res) => {
 // Get evidence by ID
 router.get('/:id', async (req, res) => {
   try {
-    const evidence = await Evidence.findOne({ evidenceId: req.params.id });
-    if (!evidence) {
-      return res.status(404).json({ error: 'Evidence not found' });
-    }
+    const evidence = await Evidence.findOne({ evidenceId: req.params.id })
+    if (!evidence) return res.status(404).json({ message: 'Evidence not found' });
     res.json(evidence);
   } catch (error) {
     res.status(500).json({ error: 'Error retrieving evidence' });
+    console.log(error);
   }
 });
 
