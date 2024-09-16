@@ -8,7 +8,9 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+      clipPath: {
+        // 'rectangle': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      }
   },
   plugins: [],
 }
