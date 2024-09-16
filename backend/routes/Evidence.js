@@ -5,14 +5,15 @@ const Evidence = require('../models/evidence');
 // Create new evidence
 router.post('/create', async (req, res) => {
   try {
-    const { evidenceId, policeStationName, courtName, ipfsHash, submitterAddress } = req.body;
+    const { caseId, policeStationName, courtName, evidenceLocation, submitterAddress, firDetails } = req.body;
 
     const newEvidence = new Evidence({
-      evidenceId,
+      caseId,
       policeStationName,
       courtName,
-      ipfsHash,
-      submitterAddress
+      evidenceLocation, // Now storing as a string array
+      submitterAddress,
+      firDetails // Now storing FIR details
     });
 
     await newEvidence.save();
@@ -33,10 +34,10 @@ router.get('/all', async (req, res) => {
   }
 });
 
-// Get evidence by ID
-router.get('/:id', async (req, res) => {
+// Get evidence by case ID
+router.get('/:caseId', async (req, res) => {
   try {
-    const evidence = await Evidence.findOne({ evidenceId: req.params.id })
+    const evidence = await Evidence.findOne({ caseId: req.params.caseId });
     if (!evidence) return res.status(404).json({ message: 'Evidence not found' });
     res.json(evidence);
   } catch (error) {
