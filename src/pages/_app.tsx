@@ -9,7 +9,7 @@ import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { config } from "../wagmi";
 import { ChakraProvider } from "@chakra-ui/react";
 import Header from "../components/Header";
-import Menu from "../components/Menu";
+import Background from "../components/Background";
 
 const client = new QueryClient();
 
@@ -19,9 +19,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<QueryClientProvider client={client}>
 				<RainbowKitProvider>
 					<ChakraProvider>
-						<Header />
-						{/* <Menu/> */}
-						<Component {...pageProps} />
+						<Header/>
+						<Background>
+							<Component {...pageProps} />
+						</Background>
 					</ChakraProvider>
 				</RainbowKitProvider>
 			</QueryClientProvider>
