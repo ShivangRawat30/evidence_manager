@@ -1,25 +1,43 @@
-"use client"
-import { useAccount } from "wagmi";
+"use client";
+
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { useAccount } from "wagmi";
+import { checkAuth, printNew } from "../../api/auth";
+import { useUserStore } from "../../store";
+import { UserStore } from "../../store/globalSlices";
+
 export default function Connect() {
-    const { address } = useAccount();
-    const router = useRouter();
-    useEffect(()=>{
-        if (address) {
-            console.log(address);
+	const [res, setRes] = useState<Partial<UserStore>>(); // Directly store the response data
+	const { address } = useAccount();
+	const setUser = useUserStore(state=>state.setUser)
 
-            // check auth from server... if authorized, redirect to /id
-			//router.push("/",address);
+	const fetchAuth = async (address: string) => {
+		try {
+			const response = await checkAuth(address);
+			setRes(response); // Set the response directly
+		} catch (error) {
+			console.error("Error in authorization:", error);
+		}
+	};
 
+	useEffect(() => {
+		if (address) {
+			fetchAuth(address);
+		}
+	}, [address]);
 
-        }
-    },[address])
+	useEffect(() => {
+		if (res) {
+			console.log(res);
+			setUser(res);
+		}
+	}, [res]);
+
 	return (
 		<>
-			{JSON.stringify(address)}
-			<div className="py mt-20">
+			<div className="mt-10">
+				{JSON.stringify(res)} {/* Display the response */}
 				<ConnectButton />
 			</div>
 		</>

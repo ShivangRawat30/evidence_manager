@@ -10,10 +10,15 @@ import { config } from "../wagmi";
 import { ChakraProvider } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Background from "../components/Background";
+import { useUserStore } from "../store";
 
 const client = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
+	const id = useUserStore(state=>state.setUser);
+	id({authorized:true,id:"new",address:"SADA",type:"police"});
+	const newUser = useUserStore(state=>state.id);
+	console.log(newUser);
 	return (
 		<WagmiProvider config={config}>
 			<QueryClientProvider client={client}>
