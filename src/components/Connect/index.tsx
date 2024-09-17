@@ -29,7 +29,7 @@ export default function Connect() {
 
 	useEffect(() => {
 		if (res) {
-			console.log(res);
+			// console.log(res);
 			setUser(res);
 		}
 	}, [res]);

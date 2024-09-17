@@ -1,12 +1,7 @@
 "use client";
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 export default function Ham() {
-	const [menu, setMenu] = useState(false);
-	const toggleMenu = () => {
-		setMenu(!menu);
-	};
 	const router = useRouter();
 	const MenuItems = [
 		{ path: "/", label: "Home" },
@@ -24,7 +19,6 @@ export default function Ham() {
 							" bg-gradient-to-r from-cyan-500/90 to-cyan-600/30"
 						} `}
 						onClick={() => {
-							toggleMenu();
 							router.push(link.path);
 						}}>
 						{link.label}
