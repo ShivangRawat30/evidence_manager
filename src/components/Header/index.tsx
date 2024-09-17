@@ -2,8 +2,18 @@ import Link from "next/link";
 import React from "react";
 import Ham from "./Ham";
 import { GrSecure } from "react-icons/gr";
+import Menu from "../Menu";
+import { useRouter } from "next/router";
 
 const Header: React.FC = () => {
+	const router = useRouter();
+	const isLanding = () => {
+		return (
+			router.pathname === "/" ||
+			router.pathname === "/about" ||
+			router.pathname === "/contact"
+		);
+	};
 	return (
 		<header className="py-12 px-32 z-10 absolute w-screen text-white">
 			<main className="w-full mx-auto flex justify-between items-center flex-wrap">
@@ -23,7 +33,7 @@ const Header: React.FC = () => {
 					</span>
 				</Link>
 				<div className="flex justify-end items-center space-x-2 md:space-x-4 mt-2 md:mt-0 "></div>
-				<Ham />
+				{isLanding() ? <Ham /> : <Menu/>}
 			</main>
 		</header>
 	);

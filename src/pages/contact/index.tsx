@@ -2,7 +2,7 @@ import { Button, Input, Stack } from "@chakra-ui/react";
 import { MdEmail,MdCall } from "react-icons/md";
 export default function ContactPage() {
 	return (
-		<div className=" text-center select-none overflow-y-hidden flex flex-col items-center justify-center h-screen">
+		<div className=" text-center select-none overflow-y-hidden flex flex-col items-center justify-center h-full">
 			<h1 className="text-cyan-200 hover:text-teal-200 transition-colors duration-200 text-7xl text-center py-7 font-bold">
 				Contact Us
 			</h1>

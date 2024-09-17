@@ -24,12 +24,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 						overlayBlur: "small",
 					})}>
 					<ChakraProvider>
-						<div className="font-sans">
-							<Header />
-							<Background>
-								<Component {...pageProps} />
-							</Background>
-						</div>
+						<Background>
+							<Component {...pageProps} />
+						</Background>
 					</ChakraProvider>
 				</RainbowKitProvider>
 			</QueryClientProvider>
