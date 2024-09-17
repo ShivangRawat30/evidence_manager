@@ -10,7 +10,6 @@ import { config } from "../wagmi";
 import { ChakraProvider } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Background from "../components/Background";
-import Footer from "../components/Footer";
 
 const client = new QueryClient();
 
@@ -32,7 +31,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 						<Background>
 							<Component {...pageProps} />
 						</Background>
-						<Footer/>
 						</div>
 					</ChakraProvider>
 				</RainbowKitProvider>
