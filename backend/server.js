@@ -33,9 +33,10 @@ app.post("/api/auth", async (req, res) => {
   try {
     // Search for the address in the PoliceStation collection
     const policeStation = await PoliceStation.findOne({ publicKey: address });
-    console.log("Police station found:", policeStation); // Log the policeStation object
+    
 
     if (policeStation) {
+      console.log("Police station found:", policeStation); // Log the policeStation object
       return res.status(200).json({
         type: "police",
         authorized: true,
@@ -45,10 +46,12 @@ app.post("/api/auth", async (req, res) => {
 
     // Search for the address in the Court collection
     const court = await Court.findOne({ publicKey: address });
-    console.log("Court found:", court); // Log the court object
+    
 
     if (court) {
+      console.log("Court found:", court); // Log the court object
       return res.status(200).json({
+        
         type: "court",
         authorized: true,
         details: court,
