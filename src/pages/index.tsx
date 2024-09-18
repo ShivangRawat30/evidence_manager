@@ -11,10 +11,10 @@ const Home: NextPage = () => {
 		<div className="text-white selection:bg-cyan-200/10 h-[100%] flex flex-col items-center justify-center">
 			<div className="grid grid-cols-2 h-full w-full px-32 items-center">
 				<div className="text-center sm:text-center md:text-left lg:text-left flex flex-col pt-20">
-					<h1 className="text-6xl font-bold tracking-tight my-5 text-teal-200 hover:text-cyan-200 transition-colors duration-500">
+					<h1 className="text-[4vw] leading-tight font-bold tracking-tight my-5 text-teal-200 hover:text-cyan-200 transition-colors duration-500">
 						Revolutionizing Evidence Storage with Blockchain
 					</h1>
-					<p>
+					<p className="text-[1vw]">
 						Welcome to BlockSafe, your trusted solution for secure and
 						decentralized evidence management. Using blockchain technology, we
 						provide police stations, courts, and legal professionals with
