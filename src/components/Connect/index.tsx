@@ -1,11 +1,10 @@
 "use client";
 
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAccount } from "wagmi";
-import { checkAuth, printNew } from "../../api/auth";
+import { checkAuth } from "../../api/auth";
 import { useUserStore } from "../../store";
-import { UserStore } from "../../store/globalSlices";
 
 
 export default function Connect() {
@@ -14,8 +13,13 @@ export default function Connect() {
 	
 	const fetchAuth = async (address: string) => {
 		try {
-			const response = await checkAuth(address);
-			setUser(response);
+			if (address) {
+				const response = await checkAuth(address);
+				setUser(response);
+			}
+			else {
+                setUser({ authorized: false, address: "", type: "" });
+            }
 		} catch (error) {
 			console.error("Error in authorization:", error);
 		}
