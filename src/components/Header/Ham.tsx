@@ -16,7 +16,7 @@ export default function Ham() {
 						key={index}
 						className={`px-5 py-3 m-2 h-full rounded-full font-medium " ${
 							router.pathname == link.path &&
-							" bg-gradient-to-r from-cyan-500/90 to-cyan-600/30 hover:from-cyan-500/90 hover:to-teal-600/30"
+							" bg-gradient-to-r from-cyan-500/90 to-cyan-600/30 hover:from-cyan-500/90 hover:via-teal-600/90 hover:to-teal-600/30"
 						} `}
 						onClick={() => {
 							router.push(link.path);
