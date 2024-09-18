@@ -2,6 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const connectDB = require('./config/database'); 
 const evidenceRoutes = require('./routes/Evidence');
+const policeStationRoutes = require('./routes/PoliceStation');
+const courtRoutes = require('./routes/Court');
+const dotenv = require('dotenv');
+
+// Load environment variables from .env file
+dotenv.config();
 const cors = require('cors');
 require('dotenv').config();
 
@@ -25,6 +31,8 @@ app.post("/api/auth",async (req, res) => {
 })
 // Define routes
 app.use('/api/evidence', evidenceRoutes);
+app.use('/api/police-station', policeStationRoutes);
+app.use('/api/court', courtRoutes);
 
 // Start the server
 app.listen(PORT, () => {
