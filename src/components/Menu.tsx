@@ -49,8 +49,7 @@ export default function Menu() {
 	}, [isMenuOpen]);
 	return (
 		<div
-			className="menu-container z-50"
-			ref={container}>
+			className="menu-container z-50 text-white">
 			<div className="menu-bar fixed top-0 left-0 w-screen p-[2em] flex justify-between items-center z-1">
 				<div className="menu-logo">
 					<Link
@@ -62,10 +61,10 @@ export default function Menu() {
 				<div
 					className="menu-open"
 					onClick={toggleMenu}>
-					<p className="text-white cursor-pointer">Menu</p>
+					<p className="text-white cursor-pointer text-9xl">Menu</p>
 				</div>
 			</div>
-			<div className="menu-overlay fixed top-0 left-0 w-screen h-screen p-[2em] bg-blue-200 flex z-2">
+			<div className="menu-overlay fixed top-0 left-0 w-screen h-screen p-[2em] bg-blue-200/5 flex z-2">
 				<div className="menu-overlay-bar">
 					<div className="menu-logo">
 						<Link href="/">Evidence</Link>
