@@ -1,7 +1,14 @@
+type UserDetails = {
+	_id:string,
+	publicKey:string,
+	courtName:string,
+	policeStationName:string,
+}
+
+
 export type UserStore = {
-	id: string;
-	authorized: boolean;
-	address: string;
 	type: string;
+	authorized: boolean;
+	details: UserDetails;
     setUser: (user:Partial<UserStore>)=>void;
 };

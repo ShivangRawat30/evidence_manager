@@ -30,7 +30,7 @@ const Home: NextPage = () => {
 					<Connect />
 					{user?.authorized && (
 						<>
-							<Link href={`/id/${user.id}`}>
+							<Link href={`/id/${user.details.publicKey}`}>
 								<Button colorScheme="teal">Go To Dashboard</Button>
 							</Link>
 						</>
