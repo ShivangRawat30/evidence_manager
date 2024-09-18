@@ -4,6 +4,10 @@ const connectDB = require('./config/database');
 const evidenceRoutes = require('./routes/Evidence');
 const policeStationRoutes = require('./routes/PoliceStation');
 const courtRoutes = require('./routes/Court');
+const dotenv = require('dotenv');
+
+// Load environment variables from .env file
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 2000; // Port can be set using environment variables
