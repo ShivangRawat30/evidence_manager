@@ -22,6 +22,15 @@ app.use(cors())
 
 app.post("/api/auth",async (req, res) => {
   console.log(req.body.address);
+  //search for the PUBLIC_ID from MongoDB database in both court and police DB
+
+  //send a response of the format 
+    //if found/authorized, check if it is a police/court 
+      //police - {type:"police",authorized:true,details: FROM_MONGO_DB}
+      //court - {type:"court",authorized:true,details: FROM_MONGO_DB}
+
+    //if not found/authorized, eg. {authorized:false}
+    
   if (req.body.address == "0x53dd4A0f08D0519AAEACeDBc607FD788b285FdBf") {
     res.send({id:123,authorized:true,type:"police"})
   }
