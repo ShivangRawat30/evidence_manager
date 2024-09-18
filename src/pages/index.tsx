@@ -6,7 +6,7 @@ import { Button } from "@chakra-ui/react";
 import { useUserStore } from "../store";
 
 const Home: NextPage = () => {
-	const user = useUserStore();
+	const {authorized} = useUserStore();
 	return (
 		<div className="text-white selection:bg-cyan-200/10 h-[100%] flex flex-col items-center justify-center">
 			<div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2 h-full w-full px-32 items-center">
@@ -28,9 +28,9 @@ const Home: NextPage = () => {
 						safeguarding justice.
 					</p>
 					<Connect />
-					{user?.authorized && (
+					{authorized && (
 						<>
-							<Link href={`/id/${user.details.publicKey}`}>
+							<Link href={`/dashboard`}>
 								<Button colorScheme="teal">Go To Dashboard</Button>
 							</Link>
 						</>
