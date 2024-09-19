@@ -14,7 +14,8 @@ export default function Menu() {
             <div className="p-3 hover:bg-blue-300/10 rounded-full transition-colors duration-100 cursor-pointer text-2xl underline" onClick={toggleMenu}>
                 <GiHamburgerMenu />
             </div>
-            <MenuOverlay toggle={toggleMenu}/>    
+            {menu && <MenuOverlay toggle={toggleMenu}/>}
+
         </>
 	);
 }

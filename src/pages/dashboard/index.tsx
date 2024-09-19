@@ -4,7 +4,7 @@ import { useUserStore } from "../../store";
 export default function DashBoard() {
     const user = useUserStore();
     return (
-        <div>
+        <div className="bg-orange-500 absolute">
             {JSON.stringify(user)}
             {/* <h1>Dashboard</h1>
             <p>Welcome to your personalized storage space.</p>
