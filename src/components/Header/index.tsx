@@ -32,7 +32,7 @@ const Header: React.FC = () => {
 				</span>
 			</Link>
 			{/* <div className="flex justify-end items-center space-x-2 md:space-x-4 mt-2 md:mt-0 "></div> */}
-			<div className="bg-black hidden md:block lg:block">
+			<div className="hidden md:block lg:block">
 				{isLanding() ? <Ham /> : <Menu />}
 			</div>
 		</header>
