@@ -15,17 +15,7 @@ const Home: NextPage = () => {
 						Revolutionizing Evidence Storage with Blockchain
 					</h1>
 					<p className="text-[2vh]">
-						Welcome to BlockSafe, your trusted solution for secure and
-						decentralized evidence management. Using blockchain technology, we
-						provide police stations, courts, and legal professionals with
-						tamper-proof storage for critical case evidence. Our platform
-						ensures that every piece of evidence is immutable, traceable, and
-						protected from unauthorized access or tampering. By decentralizing
-						storage, BlockSafe enhances transparency and accountability in legal
-						proceedings, ensuring the integrity of the justice process.
-						Experience the power of blockchain as we transform evidence
-						management into a secure, seamless, and reliable process for
-						safeguarding justice.
+					Welcome to BlockSafe, a secure and decentralized solution for managing case evidence using blockchain technology. Safeguard justice with tamper-proof, transparent, and reliable evidence storage for legal professionals.
 					</p>
 					<Connect />
 					{authorized && (
