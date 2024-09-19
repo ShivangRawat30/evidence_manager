@@ -11,7 +11,6 @@ const menuLinks = [
 	{ path: "/contact", label: "Contact" },
 ];
 export const MenuOverlay: React.FC<{ toggle: () => void }> = ({ toggle }) => {
-	// const container = useRef<LegacyRef<HTMLDivElement> | undefined>(null);
 	const container = useRef<HTMLDivElement | null>(null);
 	const tl1 = useRef<GSAPTimeline>();
 	const tl2 = useRef<GSAPTimeline>();

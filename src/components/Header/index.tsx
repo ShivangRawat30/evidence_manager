@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 		);
 	};
 	return (
-		<header className="py-12 z-10 w-full text-white flex justify-between items-center flex-wrap">
+		<header className="py-6 z-10 w-full text-white flex justify-between items-center flex-wrap">
 			<Link
 				href={"/"}
 				className="text-4xl">

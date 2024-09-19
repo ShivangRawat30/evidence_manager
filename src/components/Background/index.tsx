@@ -7,7 +7,7 @@ export default function Background({
 	children: React.ReactNode;
 }) {
 	return (
-		<div className="fixed bg-black text-white -z-10 w-full h-screen grid grid-rows-6 px-12 lg:px-32">
+		<div className="fixed bg-black text-white -z-10 w-full h-screen grid grid-rows-11 px-12 lg:px-32">
 			<div className="absolute">
 				<Image
 					src="/images/Vector.png"
@@ -26,7 +26,7 @@ export default function Background({
 				{children}
 			</div> */}
             <div className="relative"><Header/></div>
-            <div className="relative row-span-5">{children}</div>
+            <div className="relative row-span-10">{children}</div>
 		</div>
 	);
 }
