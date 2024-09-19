@@ -18,7 +18,7 @@ export default function Connect() {
 				setUser(response);
 			}
 			else {
-                setUser({ authorized: false, address: "", type: "" });
+                setUser({ authorized: false, details: {_id:"",publicKey:"",policeStationName:"",courtName:""}, type: "" });
             }
 		} catch (error) {
 			console.error("Error in authorization:", error);
