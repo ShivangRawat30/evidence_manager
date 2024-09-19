@@ -8,13 +8,13 @@ import { useUserStore } from "../store";
 const Home: NextPage = () => {
 	const {authorized} = useUserStore();
 	return (
-		<div className="text-white selection:bg-cyan-200/10 h-[100%] flex flex-col items-center justify-center">
-			<div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2 h-full w-full px-32 items-center">
-				<div className="text-center sm:text-center md:text-left lg:text-left flex flex-col justify-center">
-					<h1 className="text-[8vh] leading-tight font-bold tracking-tight my-5 text-teal-200 hover:text-cyan-200 transition-colors duration-500">
+		<div className="text-white selection:bg-cyan-200/10 h-full bg-slate-200/5 flex flex-col items-center justify-center">
+			<div className="grid grid-cols-1 lg:grid-cols-2 h-full w-full items-center">
+				<div className="text-center lg:text-left flex flex-col justify-center items-center lg:items-start">
+					<h1 className="text-[10vw] lg:text-[4vw] leading-tight font-bold tracking-tight my-5 text-teal-200 hover:text-cyan-200 transition-colors duration-500">
 						Revolutionizing Evidence Storage with Blockchain
 					</h1>
-					<p className="text-[2vh]">
+					<p className="text-[4vw] lg:text-[1vw]">
 					Welcome to BlockSafe, a secure and decentralized solution for managing case evidence using blockchain technology. Safeguard justice with tamper-proof, transparent, and reliable evidence storage for legal professionals.
 					</p>
 					<Connect />
@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 						</>
 					)}
 				</div>
-				<div className="items-center justify-center hidden sm:hidden md:flex lg:flex xl:flex">
+				<div className="items-center justify-center hidden sm:hidden md:hidden lg:flex xl:flex">
 					<Image
 						src={"/images/GlobeLock.png"}
 						width={500}

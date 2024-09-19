@@ -9,7 +9,7 @@ export default function Ham() {
 		{ path: "/contact", label: "Contact" }
 	];
 	return (
-		<div className="flex items-center justify-end gap-2 w-1/3">
+		<div className="flex items-center justify-end gap-2">
 			<div className="border-cyan-100/20 border-[1px] rounded-full bg-gradient-to-r from-cyan-900/20 to-cyan-900/60 flex items-center w-fit cursor-pointer ">
 				{MenuItems.map((link, index) => (
 					<div

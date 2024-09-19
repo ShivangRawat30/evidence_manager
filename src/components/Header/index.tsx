@@ -16,10 +16,10 @@ const Header: React.FC = () => {
 		);
 	};
 	return (
-		<header className="absolute py-12 px-32 z-10 w-full text-white flex justify-between items-center flex-wrap">
+		<header className="py-12 z-10 w-full text-white flex justify-between items-center flex-wrap">
 			<Link
 				href={"/"}
-				className="text-4xl mb-2">
+				className="text-4xl">
 				<span className="flex items-center font-sans tracking-tighter font-bold">
 					<span className=" text-teal-300 hover:text-cyan-300 transition-colors duration-200 pr-3">
 						<GrSecure />
@@ -32,7 +32,9 @@ const Header: React.FC = () => {
 				</span>
 			</Link>
 			{/* <div className="flex justify-end items-center space-x-2 md:space-x-4 mt-2 md:mt-0 "></div> */}
-			{isLanding() ? <Ham /> : <Menu />}
+			<div className="bg-black hidden md:block lg:block">
+				{isLanding() ? <Ham /> : <Menu />}
+			</div>
 		</header>
 	);
 };
