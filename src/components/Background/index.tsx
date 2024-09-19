@@ -12,7 +12,7 @@ export default function Background({ children }: { children: React.ReactNode }) 
                 </div>
                 <div className="h-[90vh] w-[90vh] bg-teal-500/5 absolute right-10 top-1/2 -translate-y-[47%] rounded-full blur-3xl">
                 </div>
-            <div className="relative w-full mt-32 h-[80%]">
+            <div className="relative w-full mt-32 h-[80%] border-[1px] border-green-200/20"> 
                 {children}
             </div>
         </div>

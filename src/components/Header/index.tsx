@@ -2,8 +2,9 @@ import Link from "next/link";
 import React from "react";
 import Ham from "./Ham";
 import { GrSecure } from "react-icons/gr";
-import Menu from "../Menu";
+
 import { useRouter } from "next/router";
+import Menu from "./Menu";
 
 const Header: React.FC = () => {
 	const router = useRouter();
