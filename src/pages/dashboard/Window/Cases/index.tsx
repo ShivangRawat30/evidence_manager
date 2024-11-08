@@ -20,11 +20,11 @@ interface CaseData {
 
 const Cases= ({cases}:{cases:CaseData[]}) => {
     return (
-        <div className='overflow-y-scroll h-full'>
+        <>
             {cases.map((caseItem, index) => (
                 <Case key={index} caseData={caseItem} />
             ))}
-        </div>
+        </>
     );
 };
 

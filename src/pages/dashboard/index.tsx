@@ -9,7 +9,7 @@ export default function DashBoard() {
     return  (
         <div className="bg-gradient-to-tr from-teal-200/10 via-emerald-200/10 to-cyan-200/10 border-white/5 backdrop-blur-xl border-[1px] h-[85vh] w-full rounded-[11px] px-[11px] absolute grid grid-cols-10">
             {/* {JSON.stringify(user)} */}
-            <DashboardMenu />
+            {/* <DashboardMenu /> */}
             <Window user={user}/>
         </div>
     )

@@ -23,17 +23,17 @@ const Case: React.FC<CaseProps> = ({ caseData }) => {
     return (
         <div
             key={caseData.id}
-            className={`mb-4 p-4 rounded cursor-pointer ${
-                caseData.ended ? "bg-gray-400 dark:bg-gray-500/90" : "bg-gray-200/90 dark:bg-emerald-600/90"
+            className={`p-4 space-y-1 my-2 rounded cursor-pointer transition-colors duration-100 hover:text-gray-900 ${
+                caseData.ended ? "bg-gray-400 dark:bg-gray-500/90 hover:bg-gray-500" : "bg-gray-200/90 hover:bg-emerald-500 dark:bg-emerald-600/90"
             }`}
         >
             <h3 className="text-xl font-bold hover:underline">{JSON.stringify(caseData.stationName)}</h3>
-            <p className="text-sm text-gray-200">Assigned Court: {caseData.assignedCourt}</p>
-            <p className="text-sm text-gray-200">Location: {caseData.location}</p>
-            <p className="text-sm text-gray-200">Inspector: {caseData.inspectorName}</p>
-            <p className="text-sm text-gray-200">Victim: {caseData.victimName}</p>
-            <p className="text-sm text-gray-200">Case ID: {caseData.caseId}</p>
-            <p className="text-sm text-gray-200">Details: {caseData.details}</p>
+            <p className="text-sm ">Assigned Court: {caseData.assignedCourt}</p>
+            <p className="text-sm ">Location: {caseData.location}</p>
+            <p className="text-sm ">Inspector: {caseData.inspectorName}</p>
+            <p className="text-sm ">Victim: {caseData.victimName}</p>
+            <p className="text-sm ">Case ID: {caseData.caseId}</p>
+            <p className="text-sm ">Details: {caseData.details}</p>
         </div>
     );
 };
