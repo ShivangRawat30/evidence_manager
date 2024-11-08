@@ -7,6 +7,7 @@ import { LegacyRef, useEffect, useRef, useState } from "react";
 import { GrSecure } from "react-icons/gr";
 const menuLinks = [
 	{ path: "/", label: "Home" },
+	{ path: "/dashboard", label: "Dashboard" },
 	{ path: "/about", label: "About" },
 	{ path: "/contact", label: "Contact" },
 ];

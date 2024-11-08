@@ -5,6 +5,7 @@ export default function Ham() {
 	const router = useRouter();
 	const MenuItems = [
 		{ path: "/", label: "Home" },
+		{ path: "/dashboard", label: "Dashboard" },
 		{ path: "/about", label: "About" },
 		{ path: "/contact", label: "Contact" }
 	];

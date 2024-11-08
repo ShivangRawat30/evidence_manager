@@ -11,6 +11,7 @@ const Header: React.FC = () => {
 	const isLanding = () => {
 		return (
 			router.pathname === "/" ||
+			router.pathname === "/dashboard" ||
 			router.pathname === "/about" ||
 			router.pathname === "/contact"
 		);

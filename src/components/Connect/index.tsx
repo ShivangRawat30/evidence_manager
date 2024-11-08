@@ -26,11 +26,7 @@ export default function Connect() {
 	};
 	const AuthMessage = ()=>{
 		if (address){
-			if (authorized) {
                 return <p className="font-bold text-emerald-500 hover:text-teal-500 transition-colors duration-200 cursor-alias">Authorized</p>;
-            } else {
-                return <p className="font-bold text-red-600 hover:text-red-500 transition-colors duration-200 cursor-not-allowed">Not authorized</p>;
-            }
 		}
 		else {
             return <p className="text-gray-300 hover:text-gray-500 transition-colors duration-200">Connect to access Dashboard</p>;
