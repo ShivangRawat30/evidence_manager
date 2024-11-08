@@ -45,7 +45,7 @@ export default function Page({ user }: { user: UserStore }) {
 				time: Math.floor(faker.date.recent().getTime() / 1000),
 				inspectorName: `Inspector ${faker.person.lastName()}`,
 				victimName: faker.person.fullName(),
-				details: faker.lorem.sentence(),
+				details: faker.lorem.sentence(50),
 				caseId: faker.number.int({ min: 2023000000000, max: 2023999999999 }),
 				ended: faker.datatype.boolean(),
 			});
@@ -55,11 +55,12 @@ export default function Page({ user }: { user: UserStore }) {
 
 	const openModal = () => setIsOpen(true);
 	const closeModal = () => setIsOpen(false);
-	const cases = generateFakeCases(5);
+	const cases = generateFakeCases(10);
 	return (
 		<div className="col-span-12 grid grid-rows-12 h-[83vh]">
 			<div className="text-[200%] font-black flex items-center justify-between">
-				{user.details.courtName || user.details.policeStationName}
+				{/* {user.details.courtName || user.details.policeStationName} */}
+                Janakpuri Police Station
 				<Button
 					colorScheme="teal"
 					onClick={openModal}>
@@ -76,7 +77,7 @@ export default function Page({ user }: { user: UserStore }) {
 					</ModalContent>
 				</Modal>
 			</div>
-			<div className="bg-emerald-900/10 row-span-11 rounded-[11px] overflow-y-scroll h-[100%]">
+			<div className="bg-emerald-900/10 row-span-11 rounded-[11px] overflow-y-scroll h-[100%] grid grid-cols-2">
 				{/* {user.details.publicKey} */}
 				<Cases cases={cases} />
 			</div>
