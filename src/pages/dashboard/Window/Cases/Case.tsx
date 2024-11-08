@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { BiSolidDownvote, BiSolidUpvote } from "react-icons/bi";
 
@@ -22,11 +23,11 @@ const Case: React.FC<CaseProps> = ({ caseData }) => {
     return (
         <div
             key={caseData.id}
-            className={`mb-4 p-4 rounded ${
-                caseData.ended ? "bg-gray-400 dark:bg-gray-500" : "bg-gray-200 dark:bg-emerald-600"
+            className={`mb-4 p-4 rounded cursor-pointer ${
+                caseData.ended ? "bg-gray-400 dark:bg-gray-500/90" : "bg-gray-200/90 dark:bg-emerald-600/90"
             }`}
         >
-            <h3 className="text-xl font-bold">{caseData.stationName}</h3>
+            <h3 className="text-xl font-bold hover:underline">{JSON.stringify(caseData.stationName)}</h3>
             <p className="text-sm text-gray-200">Assigned Court: {caseData.assignedCourt}</p>
             <p className="text-sm text-gray-200">Location: {caseData.location}</p>
             <p className="text-sm text-gray-200">Inspector: {caseData.inspectorName}</p>
