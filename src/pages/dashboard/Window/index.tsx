@@ -38,7 +38,7 @@ export default function Page({ user }: { user: UserStore }) {
 					faker.string.uuid()
 				),
 				id: faker.number.int({ min: 10000, max: 99999 }),
-				stationName: `${faker.location.city()} Police Station`,
+				stationName: `${faker.location.city()}`,
 				assignedCourt: `Courtroom ${faker.number.int({ min: 1, max: 5 })}`,
 				location: faker.location.streetAddress(),
 				submitter: faker.finance.ethereumAddress(),

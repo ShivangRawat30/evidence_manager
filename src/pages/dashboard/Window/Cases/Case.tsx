@@ -28,8 +28,7 @@ const Case: React.FC<CaseProps> = ({ caseData }) => {
 	return (
 		<div
 			key={caseData.id}
-			className={`p-4 space-y-1 m-2 flex flex-col justify-between items-center h-[55vh] rounded-xl cursor-pointer transition-colors duration-100 text-gray-300 hover:text-gray-100
-                hover:bg-gray-500" bg-gray-200/90 hover:bg-gray-500/40 dark:bg-gray-600/20
+			className={`p-4 space-y-1 m-2 flex flex-col justify-between items-center h-[55vh] rounded-xl cursor-pointer transition-colors duration-100 text-gray-300 hover:text-gray-100 bg-gray-200/90 hover:bg-gray-500/40 dark:bg-gray-600/20 select-none
             `}>
 			<div className="flex flex-col gap-3">
 				<h3 className="text-xl font-bold hover:underline text-center mb-4">
@@ -55,21 +54,18 @@ const Case: React.FC<CaseProps> = ({ caseData }) => {
 					Details:<span className={spanStyle}>{caseData.details}</span>
 				</p>
 			</div>
-            <div className="mt-10 ">
-			{caseData.ended ? (
-                <div
-                className="text-white cursor-not-allowed bg-black p-3 rounded-xl"
-                >
-					Case Completed
-				</div>
-			) : (
-                <a
-                href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCy16nhIbV3pI1qLYHMJKwbH2458oiC9EmA&s"
-                target="_blank">
+			<div className="mt-10 flex items-center gap-20">
+				{caseData.ended && (
+					<div className="text-white cursor-not-allowed border border-red-600/70 text-red-600/70 font-bold p-3 rounded-xl">
+						Case Completed
+					</div>
+				)}
+				<a
+					href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCy16nhIbV3pI1qLYHMJKwbH2458oiC9EmA&s"
+					target="_blank">
 					<Button colorScheme="teal">Show Evidence</Button>
 				</a>
-			)}
-            </div>
+			</div>
 		</div>
 	);
 };
