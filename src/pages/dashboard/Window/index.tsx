@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { UserStore } from "../../../store/globalSlices";
 import CaseForm from "../CaseForm";
+import Cases from "./Cases";
 
 export default function Page({ user }: { user: UserStore }) {
 	const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function Page({ user }: { user: UserStore }) {
 
 	return (
 		<div className="col-span-9 grid grid-rows-12">
-			<div className="text-[200%] font-black bg-white/10 flex items-center justify-between">
+			<div className="text-[200%] font-black flex items-center justify-between">
 				{user.details.courtName || user.details.policeStationName}
 				<Button
 					colorScheme="teal"
@@ -31,6 +32,7 @@ export default function Page({ user }: { user: UserStore }) {
 			</div>
 			<div className="bg-emerald-900/5 row-span-11 rounded-[11px]">
 				{user.details.publicKey}
+                <Cases/>
 				<Modal
 					isOpen={isOpen}
 					onClose={closeModal}>
