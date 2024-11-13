@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
 	Button,
 	Modal,
@@ -11,6 +11,7 @@ import { UserStore } from "../../../store/globalSlices";
 import CaseForm from "../CaseForm";
 import Cases from "./Cases";
 import { faker } from "@faker-js/faker";
+import { getAllFirByStation } from "../../../utils/blockchain";
 
 export default function Page({ user }: { user: UserStore }) {
 	interface CaseData {
@@ -27,6 +28,7 @@ export default function Page({ user }: { user: UserStore }) {
 		caseId: number;
 		ended: boolean;
 	}
+	const [newCase, setCase] = useState([]);
 	const [isOpen, setIsOpen] = useState(false);
 	const generateFakeCases = (numCases: number): CaseData[] => {
 		const cases: CaseData[] = [];
@@ -50,10 +52,16 @@ export default function Page({ user }: { user: UserStore }) {
 		}
 		return cases;
 	};
+	useEffect(() => {
+		const getCases = async() => {
+			const cases = await getAllFirByStation();
+			setCase(cases);
+		}
+		getCases();
+	})
 
 	const openModal = () => setIsOpen(true);
 	const closeModal = () => setIsOpen(false);
-	const cases = generateFakeCases(10);
 	return (
 		<div className="col-span-12 grid grid-rows-12 h-[83vh]">
 			<div className="text-[200%] font-black flex items-center justify-between">
@@ -82,7 +90,7 @@ export default function Page({ user }: { user: UserStore }) {
 			</div>
 			<div className="bg-emerald-900/10 row-span-11 rounded-[11px] overflow-y-scroll h-[100%] grid grid-cols-2">
 				{/* {user.details.publicKey} */}
-				<Cases cases={cases} />
+				<Cases cases={newCase} />
 			</div>
 		</div>
 	);

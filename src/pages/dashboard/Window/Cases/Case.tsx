@@ -7,7 +7,7 @@ import { BiSolidDownvote, BiSolidUpvote } from "react-icons/bi";
 
 interface CaseProps {
 	caseData: {
-		cid: string[];
+		cid: string;
 		id: number;
 		stationName: string;
 		assignedCourt: string;
@@ -23,12 +23,13 @@ interface CaseProps {
 }
 const Case: React.FC<CaseProps> = ({ caseData }) => {
 	const router = useRouter();
+	console.log(caseData);
 	const detailHeading = "font-bold";
 	const spanStyle = "font-light ml-1";
 	return (
 		<div
 			key={caseData.id}
-			className={`p-4 space-y-1 m-2 flex flex-col justify-between items-center h-[55vh] rounded-xl cursor-pointer transition-colors duration-100 text-gray-300 hover:text-gray-100 bg-gray-200/90 hover:bg-gray-500/40 dark:bg-gray-600/20 select-none
+			className={`p-4 space-y-1 m-2 flex flex-col justify-between items-center h-[55vh] rounded-xl cursor-pointer transition-colors duration-100 border border-white/10 text-gray-200 hover:text-gray-100 bg-gray-600/40 hover:bg-gray-500/40 dark:bg-gray-600/20 select-none
             `}>
 			<div className="flex flex-col gap-3">
 				<h3 className="text-xl font-bold hover:underline text-center mb-4">
@@ -48,7 +49,7 @@ const Case: React.FC<CaseProps> = ({ caseData }) => {
 					Victim:<span className={spanStyle}>{caseData.victimName}</span>
 				</p>
 				<p className={detailHeading}>
-					Case ID:<span className={spanStyle}>{caseData.caseId}</span>
+					Case ID:<span className={spanStyle}>{Number(caseData.caseId)}</span>
 				</p>
 				<p className={detailHeading}>
 					Details:<span className={spanStyle}>{caseData.details}</span>
@@ -61,7 +62,7 @@ const Case: React.FC<CaseProps> = ({ caseData }) => {
 					</div>
 				)}
 				<a
-					href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCy16nhIbV3pI1qLYHMJKwbH2458oiC9EmA&s"
+					href={`https://ipfs.io/ipfs/${caseData.cid}`}
 					target="_blank">
 					<Button colorScheme="teal">Show Evidence</Button>
 				</a>
