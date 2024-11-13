@@ -9,7 +9,7 @@ import {
     VStack,
 } from '@chakra-ui/react';
 
-function CaseForm() {
+function CaseForm({closeForm}:{closeForm:()=>void}) {
     const [form, setForm] = useState({
         cid: '',
         location: '',
@@ -30,15 +30,15 @@ function CaseForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form Data Submitted:", form);
-        // Add your submission logic here
+        closeForm();
     };
 
     return (
-        <Box maxWidth="500px" mx="auto" p={6} boxShadow="lg" borderRadius="md">
+        <Box className='px-3 py-6'>
             <form onSubmit={handleSubmit}>
                 <VStack spacing={4}>
                     <FormControl id="cid" isRequired>
-                        <FormLabel>Multiple CID (Link to IPFS)</FormLabel>
+                        <FormLabel>Evidence Link</FormLabel>
                         <Input
                             type="text"
                             name="cid"
@@ -102,7 +102,7 @@ function CaseForm() {
                         />
                     </FormControl>
 
-                    <Button colorScheme="blue" type="submit" width="full">
+                    <Button colorScheme="teal" type="submit" width="full">
                         Submit
                     </Button>
                 </VStack>

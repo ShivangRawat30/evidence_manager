@@ -6,8 +6,6 @@ import {
 	ModalContent,
 	ModalHeader,
 	ModalCloseButton,
-	ModalBody,
-	ModalFooter,
 } from "@chakra-ui/react";
 import { UserStore } from "../../../store/globalSlices";
 import CaseForm from "../CaseForm";
@@ -59,8 +57,7 @@ export default function Page({ user }: { user: UserStore }) {
 	return (
 		<div className="col-span-12 grid grid-rows-12 h-[83vh]">
 			<div className="text-[200%] font-black flex items-center justify-between">
-				{/* {user.details.courtName || user.details.policeStationName} */}
-                Janakpuri Police Station
+				Janakpuri Police Station
 				<Button
 					colorScheme="teal"
 					onClick={openModal}>
@@ -68,12 +65,18 @@ export default function Page({ user }: { user: UserStore }) {
 				</Button>
 				<Modal
 					isOpen={isOpen}
-					onClose={closeModal}>
+					onClose={closeModal}
+					closeOnEsc>
 					<ModalOverlay />
-					<ModalContent>
-						<ModalHeader>Case Form</ModalHeader>
+					<ModalContent
+						bgImage="linear-gradient(to right, rgb(0,60,60) , rgb(0,100,100))"
+						textColor="rgb(167 243 243 /0.9)"
+						minWidth="70vw"
+						height="fit-content"
+						>
+						<ModalHeader>New Case Form</ModalHeader>
 						<ModalCloseButton />
-						<CaseForm />
+						<CaseForm closeForm={closeModal} />
 					</ModalContent>
 				</Modal>
 			</div>
