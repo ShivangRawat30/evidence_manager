@@ -4,7 +4,7 @@ import React from 'react';
 import Case from './Case';
 
 interface CaseData {
-    cid: string[];
+    cid: string;
     id: number;
     stationName: string;
     assignedCourt: string;
@@ -19,11 +19,16 @@ interface CaseData {
 }
 
 const Cases= ({cases}:{cases:CaseData[]}) => {
+    console.log(cases);
     return (
         <>
-            {cases.map((caseItem, index) => (
-                <Case key={index} caseData={caseItem} />
-            ))}
+            {cases.length > 0 ? (
+                cases.map((caseItem) => (
+                    <Case caseData={caseItem} />
+                ))
+            ) : (
+                <div>No Cases Yet</div>
+            )}
         </>
     );
 };

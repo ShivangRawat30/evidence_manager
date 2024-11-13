@@ -1,8 +1,10 @@
 "use client";
 import { useRouter } from "next/router";
+import { useAccount } from "wagmi";
 
 export default function Ham() {
 	const router = useRouter();
+	const id = useAccount();
 	const MenuItems = [
 		{ path: "/", label: "Home" },
 		{ path: "/dashboard", label: "Dashboard" },
@@ -11,6 +13,7 @@ export default function Ham() {
 	];
 	return (
 		<div className="flex items-center justify-end gap-2">
+
 			<div className="border-cyan-100/20 border-[1px] rounded-full bg-gradient-to-r from-cyan-900/20 to-cyan-900/60 flex items-center w-fit cursor-pointer ">
 				{MenuItems.map((link, index) => (
 					<div
