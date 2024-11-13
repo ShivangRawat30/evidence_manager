@@ -12,6 +12,7 @@ import CaseForm from "../CaseForm";
 import Cases from "./Cases";
 import { faker } from "@faker-js/faker";
 import { getAllFirByStation } from "../../../utils/blockchain";
+import { useUserStore } from "../../../store";
 
 export default function Page({ user }: { user: UserStore }) {
 	interface CaseData {
@@ -28,6 +29,7 @@ export default function Page({ user }: { user: UserStore }) {
 		caseId: number;
 		ended: boolean;
 	}
+	const authorized = useUserStore();
 	const [newCase, setCase] = useState([]);
 	const [isOpen, setIsOpen] = useState(false);
 	const generateFakeCases = (numCases: number): CaseData[] => {
@@ -53,19 +55,21 @@ export default function Page({ user }: { user: UserStore }) {
 		return cases;
 	};
 	useEffect(() => {
-		const getCases = async() => {
+		const getCases = async () => {
 			const cases = await getAllFirByStation();
 			setCase(cases);
-		}
+		};
 		getCases();
-	})
+	});
 
 	const openModal = () => setIsOpen(true);
 	const closeModal = () => setIsOpen(false);
 	return (
 		<div className="col-span-12 grid grid-rows-12 h-[83vh]">
 			<div className="text-[200%] font-black flex items-center justify-between">
-				Janakpuri Police Station
+				{authorized
+					? user.details.courtName || user.details.policeStationName
+					: "Janakpuri Police Station"}
 				<Button
 					colorScheme="teal"
 					onClick={openModal}>
@@ -80,8 +84,7 @@ export default function Page({ user }: { user: UserStore }) {
 						bgImage="linear-gradient(to right, rgb(0,60,60) , rgb(0,100,100))"
 						textColor="rgb(167 243 243 /0.9)"
 						minWidth="70vw"
-						height="fit-content"
-						>
+						height="fit-content">
 						<ModalHeader>New Case Form</ModalHeader>
 						<ModalCloseButton />
 						<CaseForm closeForm={closeModal} />
