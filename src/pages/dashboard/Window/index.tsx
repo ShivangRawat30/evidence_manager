@@ -85,7 +85,7 @@ export default function Page({ user }: { user: UserStore }) {
 						textColor="rgb(167 243 243 /0.9)"
 						minWidth="70vw"
 						height="fit-content">
-						<ModalHeader>New Case Form</ModalHeader>
+						<ModalHeader><span className="text-3xl">New Case Form</span></ModalHeader>
 						<ModalCloseButton />
 						<CaseForm closeForm={closeModal} />
 					</ModalContent>

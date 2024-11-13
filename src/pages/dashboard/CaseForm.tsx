@@ -57,9 +57,10 @@ function CaseForm({ closeForm }: { closeForm: () => void }) {
 
 	return (
 		<Box
-			maxWidth="500px"
+			minWidth="100%"
 			mx="auto"
-			p={6}
+			py={6}
+			px={14}
 			boxShadow="lg"
 			borderRadius="md">
 			<form onSubmit={handleSubmit}>
@@ -67,13 +68,14 @@ function CaseForm({ closeForm }: { closeForm: () => void }) {
 					<FormControl
 						id="cid"
 						isRequired>
-						<FormLabel>Multiple CID (Link to IPFS)</FormLabel>
+						<FormLabel>Evidence IPFS Link</FormLabel>
 						<Input
 							type="text"
 							name="cid"
 							value={form.cid}
 							onChange={handleChange}
-							placeholder="Enter CID (IPFS link)"
+							placeholder="Enter valid IPFS link"
+							border="1px solid rgb(167 243 243 /0.9)"
 						/>
 					</FormControl>
 
@@ -87,6 +89,7 @@ function CaseForm({ closeForm }: { closeForm: () => void }) {
 							value={form.location}
 							onChange={handleChange}
 							placeholder="Enter location"
+							border="1px solid rgb(167 243 243 /0.9)"
 						/>
 					</FormControl>
 
@@ -99,6 +102,7 @@ function CaseForm({ closeForm }: { closeForm: () => void }) {
 							value={form.details}
 							onChange={handleChange}
 							placeholder="Enter details"
+							border="1px solid rgb(167 243 243 /0.9)"
 						/>
 					</FormControl>
 
@@ -112,6 +116,7 @@ function CaseForm({ closeForm }: { closeForm: () => void }) {
 							value={form.inspectorName}
 							onChange={handleChange}
 							placeholder="Enter inspector name"
+							border="1px solid rgb(167 243 243 /0.9)"
 						/>
 					</FormControl>
 
@@ -125,6 +130,7 @@ function CaseForm({ closeForm }: { closeForm: () => void }) {
 							value={form.victimName}
 							onChange={handleChange}
 							placeholder="Enter victim name"
+							border="1px solid rgb(167 243 243 /0.9)"
 						/>
 					</FormControl>
 
@@ -138,6 +144,7 @@ function CaseForm({ closeForm }: { closeForm: () => void }) {
 							value={form.caseId}
 							onChange={handleChange}
 							placeholder="Enter case ID"
+							border="1px solid rgb(167 243 243 /0.9)"
 						/>
 					</FormControl>
 
